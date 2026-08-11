@@ -1,0 +1,255 @@
+/* Currency Converter Card UI Styles */
+:root {
+  --cc-primary: #059669;
+  --cc-primary-hover: #047857;
+  --cc-bg: #f0fdf4;
+  --cc-card-bg: #ffffff;
+  --cc-text: #065f46;
+  --cc-text-dark: #0f172a;
+  --cc-text-muted: #64748b;
+  --cc-border: #e2e8f0;
+  --cc-radius: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f1f5f9;
+  color: var(--cc-text-dark);
+  line-height: 1.5;
+}
+
+.cc-app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.cc-card {
+  max-width: 500px;
+  width: 100%;
+  background: var(--cc-card-bg);
+  border-radius: var(--cc-radius);
+  border: 1px solid var(--cc-border);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.cc-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cc-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.75rem;
+  color: var(--cc-primary);
+  font-weight: 800;
+}
+
+.cc-header p {
+  margin: 0;
+  color: var(--cc-text-muted);
+  font-size: 0.9rem;
+}
+
+/* Forms */
+.cc-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.cc-form-group.flex-1 {
+  flex: 1;
+}
+
+.cc-form-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--cc-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cc-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cc-currency-symbol {
+  position: absolute;
+  left: 1rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--cc-primary);
+}
+
+.cc-input-wrapper input {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.8rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border: 2px solid var(--cc-border);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.cc-input-wrapper input:focus {
+  border-color: var(--cc-primary);
+}
+
+.cc-converter-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+}
+
+.cc-converter-row select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--cc-border);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  outline: none;
+  background: #f8fafc;
+}
+
+.cc-swap-btn {
+  background: var(--cc-bg);
+  color: var(--cc-primary);
+  border: 1px solid #a7f3d0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 0.75rem;
+  transition: transform 0.2s, background 0.2s;
+
+  @media (max-width: 480px) {
+    margin-top: 0;
+  }
+}
+
+.cc-swap-btn:hover {
+  transform: rotate(180deg);
+  background: #d1fae5;
+}
+
+/* Result Box */
+.cc-result-box {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(5, 150, 105, 0.3);
+}
+
+.cc-result-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.cc-result-val {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0.25rem 0;
+}
+
+.cc-unit-rate {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Popular rates grid */
+.cc-popular-section h3 {
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem 0;
+  color: var(--cc-text-muted);
+}
+
+.cc-popular-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.cc-popular-chip {
+  background: #f8fafc;
+  border: 1px solid var(--cc-border);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
+
+.cc-popular-chip span {
+  color: var(--cc-text-muted);
+}
+
+.cc-popular-chip strong {
+  color: var(--cc-text-dark);
+  font-size: 0.9rem;
+}
+
+/* Footer */
+.cc-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--cc-border);
+  font-size: 0.75rem;
+  color: var(--cc-text-muted);
+}
+
+.cc-loading, .cc-error {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.cc-spinner {
+  width: 36px;
+  height: 36px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--cc-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.cc-error button {
+  background: var(--cc-primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
